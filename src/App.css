@@ -22,46 +22,30 @@ body::-webkit-scrollbar{
   position: relative;
 }
 
-h1{
+.container h1{
   font-size: 150px;
   color: rgba(0, 0, 0, 0.448);
-  position: absolute;
+  /* position: absolute; */
 }
 
 .nav-bar{
   width: 100%;
   height: 60px;
-  background-color: rgb(87, 87, 87);
-  position: absolute;
+  position: fixed;
+  top: 5%;
 
   min-width: 680px;
 
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
-.item-list{
-  display: flex;
-  justify-content: center;
-  gap: 90px;
-  width: 100%;
-  /* background-color: rgb(0, 0, 0); */
-  padding-left: 150px;
-}
-.item-list:hover{
-  color: red;
-}
-
-.item-list li {
-  color: white;
-  list-style: none;
-  font-size: 20px;
-}
-
-.item-list li :hover{
-  /* color: rgb(148, 148, 148); */
-  color: pink;
+.nav-bar h1{
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  color: rgb(87, 87, 87);
 }
 
 .box1{
@@ -72,7 +56,9 @@ h1{
   backdrop-filter: blur(5px);
   border-radius: 25px;
   z-index: 2;
-  position: relative;
+  position: absolute;
+  transition: 0.05s ease-in;
+
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
@@ -83,7 +69,7 @@ h1{
   width: 100%;
   background-color: #af8af0;
   height: 25px;
-  color: red;
+  /* color: red; */
   text-align: center;
   font-size: 12px;
 }
@@ -108,4 +94,3 @@ h1{
   bottom: 0px;
   
 }
-

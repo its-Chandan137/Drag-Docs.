@@ -1,38 +1,23 @@
 import React, { useState } from 'react'
 import './App.css'
+import Background from './components/background';
+import Pills from './components/Pills';
 
 function App() {
-
   let [text,setText] = useState("")
-
-  function Coordinates(event) {
-    let x = event.clientX;
-    let y = event.clientY;
-    setText("X: " + x + ", Y : " + y);
+  let [x,setX] = useState(null)
+  let [y,setY] = useState(null)
+  let Coordinates = (event) =>{
+    setX(event.clientX);
+    setY(event.clientY);
+    setText("X: " + x + ", Y: " + y);
+    return text,x,y;
   }
-  console.log(text)
 
-    // document.getElementById("demo").innerHTML = text;
   return (
-    <div className='main-body'  onClick={(e) => Coordinates(e)}>
-      <div className="nav-bar">
-        <ul className='item-list'>
-          <li>Home</li>
-          <li>Contact</li>
-          <li>Plans</li>
-          <li>About</li>
-        </ul>
-      </div>
-
-      <div className='container'>
-        <h1>Docs.</h1>
-        <div className="box1">
-          <div className="box-head">{text}</div>
-          <div className="box-body">Oh my God...... Ni hao... nick, gucchi, media. Fire . . . </div>
-          <div className="box-botom"></div>
-        </div>
-      </div>
-
+    <div className='main-body' onMouseMove={(e) => {Coordinates(e)}}>
+      <Pills text = {text} x = {x} y = {y}/>
+      <Background />
     </div>
   )
 }
